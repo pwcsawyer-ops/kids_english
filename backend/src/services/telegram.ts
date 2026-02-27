@@ -6,6 +6,8 @@ const TOKEN = process.env.TELEGRAM_BOT_TOKEN!
 export const bot = new TelegramBot(TOKEN, { polling: true })
 
 export function initTelegramBot() {
+  const miniAppUrl = process.env.TELEGRAM_MINI_APP_URL || 'http://localhost:5173'
+
   // Handle /start command
   bot.onText(/\/start/, async (msg) => {
     const chatId = msg.chat.id
@@ -20,7 +22,9 @@ export function initTelegramBot() {
       if (user) {
         bot.sendMessage(chatId, `欢迎回来，${user.username}！\n点击下方按钮进入学习：`, {
           reply_markup: {
-            web_app: { url: process.env.TELEGRAM_MINI_APP_URL || 'http://localhost:5173' }
+            inline_keyboard: [[
+              { text: '📚 开始学习', web_app: { url: miniAppUrl } }
+            ]]
           }
         })
       } else {

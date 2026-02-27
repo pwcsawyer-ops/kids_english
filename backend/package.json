@@ -33,6 +33,7 @@
     "@types/morgan": "^1.9.9",
     "@types/node": "^20.10.5",
     "@types/node-cron": "^3.0.11",
+    "@types/node-telegram-bot-api": "^0.64.14",
     "@types/uuid": "^9.0.7",
     "prisma": "^5.7.1",
     "tsx": "^4.7.0",
