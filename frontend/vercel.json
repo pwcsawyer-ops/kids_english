@@ -3,6 +3,6 @@
   "outputDirectory": "dist",
   "installCommand": "npm install",
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "https://43.173.167.52:3000/api/$1" }
+    { "source": "/api/(.*)", "destination": "http://43.173.167.52:3000/api/$1" }
   ]
 }
